@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mental d'Acier - Communauté</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  body { background-color: #0a0a0a; color: #fff; line-height: 1.6; }
+  
+  /* Header */
+  header { background: #111; padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #ff0000; position: sticky; top: 0; z-index: 100; }
+  .logo { font-size: 20px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; color: #fff; }
+  .logo span { color: #ff0000; }
+  
+  /* Menu Burger */
+  .menu-btn { font-size: 24px; cursor: pointer; color: #fff; }
+  .nav { display: none; position: absolute; top: 70px; right: 20px; background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 10px; min-width: 150px; }
+  .nav.active { display: block; }
+  .nav a { display: block; color: #ccc; text-decoration: none; padding: 10px; font-size: 14px; border-bottom: 1px solid #333; }
+  .nav a:last-child { border-bottom: none; }
+  .nav a:hover { color: #fff; background: #222; }
+
+  /* Hero Section */
+  .hero { padding: 60px 20px; text-align: center; background: linear-gradient(180deg, #111 0%, #0a0a0a 100%); }
+  .hero h1 { font-size: 32px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+  .hero h1 span { color: #ff0000; }
+  .hero p { color: #888; font-size: 16px; margin-bottom: 30px; }
+  .hero .badge { display: inline-block; background: #ff0000; color: #fff; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 14px; margin-bottom: 20px; }
+
+  /* Section Presentation */
+  .container { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+  .section-title { font-size: 24px; margin-bottom: 20px; text-align: center; color: #ff0000; text-transform: uppercase; letter-spacing: 1px; }
+  .card { background: #151515; border: 1px solid #222; border-radius: 12px; padding: 25px; margin-bottom: 20px; }
+  .card p { color: #bbb; font-size: 15px; }
+
+  /* Section Don */
+  .don-card { background: linear-gradient(135deg, #1a0000, #000); border: 1px solid #ff0000; text-align: center; padding: 40px 20px; border-radius: 12px; }
+  .don-card h2 { font-size: 26px; margin-bottom: 10px; }
+  .don-card p { color: #ccc; margin-bottom: 25px; font-size: 15px; }
+  
+  .don-btn { display: inline-block; background: #ff0000; color: #fff; text-decoration: none; padding: 15px 30px; border-radius: 50px; font-weight: bold; font-size: 18px; text-transform: uppercase; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4); transition: 0.2s; }
+  .don-btn:active { transform: scale(0.95); }
+
+  /* Footer */
+  footer { text-align: center; padding: 30px 20px; border-top: 1px solid #222; color: #555; font-size: 12px; margin-top: 40px; }
+  footer a { color: #ff0000; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Mental <span>d'Acier</span></div>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <div class="nav" id="navMenu">
+    <a href="#accueil">Accueil</a>
+    <a href="#apropos">À propos</a>
+    <a href="#don">Faire un don</a>
+  </div>
+</header>
+
+<section class="hero" id="accueil">
+  <div class="badge">516 Abonnés</div>
+  <h1>Bienvenue dans la zone <span>Mental d'Acier</span></h1>
+  <p>La force est en toi. Merci de faire partie de cette aventure.</p>
+</section>
+
+<div class="container" id="apropos">
+  <h2 class="section-title">Notre Force</h2>
+  <div class="card">
+    <p>Merci à tous les 516 membres qui partagent le lien de la chaîne chaque jour. Ce site est le vôtre. C'est un espace pour se rappeler que la discipline, la force mentale et la solidarité sont nos seules limites.</p>
+    <br>
+    <p>Restez connectés pour du nouveau contenu, des défis et des discussions.</p>
+  </div>
+</div>
+
+<div class="container" id="don">
+  <div class="don-card">
+    <h2>Soutenir la Chaîne 🚀</h2>
+    <p>Si le contenu t'aide à avancer, tu peux m'offrir un café ou soutenir le projet pour que je puisse continuer à créer du contenu de qualité.</p>
+    <!-- Lien mis à jour avec ton numéro : +227 70 24 67 24 -->
+    <a href="https://wa.me/22770246724?text=Salut%20je%20veux%20faire%20un%20don%20pour%20Mental%20d%27Acier" class="don-btn">Faire un don 💪</a>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 Mental d'Acier. Tous droits réservés.</p>
+  <p>Fait avec ❤️ pour la communauté.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  const nav = document.getElementById('navMenu');
+  nav.classList.toggle('active');
+}
+
+// Fermer le menu si on clique ailleurs
+document.addEventListener('click', function(event) {
+  const nav = document.getElementById('navMenu');
+  const btn = document.querySelector('.menu-btn');
+  if (!nav.contains(event.target) && !btn.contains(event.target)) {
+    nav.classList.remove('active');
+  }
+});
+</script>
+</body>
+</html>
